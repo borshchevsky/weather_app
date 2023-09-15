@@ -1,20 +1,26 @@
 <template>
   <input type="text" v-model="city" @keyup.enter="getJson">
   <button @click="getJson">Get json</button>
-  <p v-if="json"> {{ json.location }}</p>
+  <ForecastToday :forecast="forecast"></ForecastToday>
 </template>
 
 <script>
 
 import {apiKey, apiUrl} from "@/constants";
+import ForecastToday from "@/components/ForecastToday";
 
 export default {
+
   name: 'App',
+  components: {
+    ForecastToday,
+  },
+
   apiKey,
   data() {
     return {
-      json: null,
-      city: null,
+      forecast: null,
+      city: 'moscow',
     }
   },
   methods: {
@@ -23,9 +29,12 @@ export default {
       fetch(url)
           .then(response => response.json())
           .then(result => {
-            this.json = result
+            this.forecast = result
           })
     }
+  },
+  mounted() {
+    this.getJson()
   }
 }
 </script>
