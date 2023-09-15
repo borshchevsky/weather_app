@@ -1,15 +1,31 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <input type="text" v-model="city" @keyup.enter="getJson">
+  <button @click="getJson">Get json</button>
+  <p v-if="json"> {{ json.location }}</p>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import {apiKey, apiUrl} from "@/constants";
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  apiKey,
+  data() {
+    return {
+      json: null,
+      city: null,
+    }
+  },
+  methods: {
+    getJson() {
+      const url = `${apiUrl}/current.json?key=${apiKey}&q=${this.city}`
+      fetch(url)
+          .then(response => response.json())
+          .then(result => {
+            this.json = result
+          })
+    }
   }
 }
 </script>
