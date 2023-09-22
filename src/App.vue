@@ -28,7 +28,7 @@ export default {
   data() {
     return {
       forecast: null,
-      city: null,
+      city: 'Moscow',
     }
   },
   methods: {
@@ -51,6 +51,8 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.cdnfonts.com/css/lullabelle');
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
