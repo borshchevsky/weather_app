@@ -1,10 +1,13 @@
 <template>
-  <div class="forecast" v-if="forecast">
-    <h2>Today</h2>
-    <img :src="img" alt="">
-      <p><label>City: {{ forecast.location.name }}</label></p>
-      <p><label>Country: {{ forecast.location.country }}</label></p>
-      <p><label>Temperature: {{ forecast.current.temp_c }} ° C</label></p>
+  <div class="forecast_today" v-if="forecast">
+    <div class="forecast_today_item">
+      <h2>{{ forecast.location.name }}</h2>
+      <p><label>{{ forecast.location.country }}</label></p>
+      <div> {{ forecast.current.temp_c }} ° C</div>
+    </div>
+    <div class="forecast_today_item">
+      <img :src="img" alt="" style="width: 100px">
+    </div>
   </div>
 </template>
 
@@ -30,10 +33,19 @@ export default {
 </script>
 
 <style scoped>
-.forecast {
-  background-color: #dadff9;
+* {
+  background: #dadff9;
+}
+
+.forecast_today {
   border-radius: 10px;
+  margin-left: 360px;
+  margin-right: 360px;
   padding: 10px;
-  text-align: left;
+  font-size: 24px;
+}
+
+.forecast_today_item {
+  display: inline-block;
 }
 </style>

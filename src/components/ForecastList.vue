@@ -1,11 +1,14 @@
 <template>
-  <div class="forecast" v-for="day in forecastList" :key="day.date">
+  <div>
+
+  </div>
+  <div class="forecast_today" v-for="day in forecastList" :key="day.date">
       <ForecastCell :forecast="day"/>
   </div>
 </template>
 
 <script>
-import {Forecast} from "@/constants";
+import { Forecast } from "@/constants";
 import ForecastCell from "@/components/ForecastCell";
 
 export default {
@@ -33,7 +36,8 @@ export default {
 </script>
 
 <style scoped>
-  .forecast {
+  .forecast_today {
     display: inline-block;
+    margin: 12px;
   }
 </style>

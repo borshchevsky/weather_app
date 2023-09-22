@@ -1,9 +1,11 @@
 <template>
-  <div>
-    <input type="text" v-model="city" @keyup.enter="getJson">
-    <button @click="getJson">Search</button>
-    <ForecastToday :forecast="forecast"></ForecastToday>
-    <ForecastList :forecast="forecast ? forecast.forecast.forecastday : []"/>
+  <div class="center">
+    <div>
+      <input type="text" v-model="city" @keyup.enter="getForecast" placeholder="City name">
+      <button @click="getForecast">Search</button>
+      <ForecastToday :forecast="forecast"/>
+      <ForecastList :forecast="forecast ? forecast.forecast.forecastday : []"/>
+    </div>
   </div>
 
 </template>
@@ -26,11 +28,14 @@ export default {
   data() {
     return {
       forecast: null,
-      city: 'moscow',
+      city: null,
     }
   },
   methods: {
-    getJson() {
+    getForecast() {
+      if (!this.city) {
+        return
+      }
       const url = `${apiUrl}/forecast.json?key=${apiKey}&q=${this.city}&days=6`
       fetch(url)
           .then(response => response.json())
@@ -40,7 +45,7 @@ export default {
     }
   },
   mounted() {
-    this.getJson()
+    this.getForecast()
   }
 }
 </script>
@@ -50,15 +55,21 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  background: white;
 }
 
 input {
   padding: 10px;
   color: #555;
   border-radius: 7px;
+  font-size: large;
 }
 
 button {
@@ -72,6 +83,15 @@ button {
   border-radius: 10px;
   box-shadow: none;
   margin: 10px;
+}
+
+label {
+  margin: 10px;
+  font-size: 24px;
+}
+
+.center {
+  text-align: center;
 }
 
 </style>

@@ -41,11 +41,13 @@ export default {
 </script>
 
 <style scoped>
+* {
+  background: aliceblue;
+}
+
 .cell {
-  background-color: aliceblue;
   padding: 10px;
   text-align: left;
-  margin: 10px;
   width: 200px;
   border-radius: 10px;
 }
