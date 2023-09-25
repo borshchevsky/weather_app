@@ -24,7 +24,7 @@ export default {
       type: Array
     }
   },
-//
+
   computed: {
     forecastList() {
       let list = []
