@@ -52,7 +52,6 @@ p {
 
 .cell {
   padding: 10px;
-  margin: 10px;
   text-align: left;
   width: 200px;
   border-radius: 10px;

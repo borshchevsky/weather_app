@@ -40,5 +40,7 @@ export default {
 <style scoped>
   .forecast_today_list {
     display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
   }
 </style>
