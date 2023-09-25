@@ -41,9 +41,13 @@ export default {
   border-radius: 10px;
   padding: 10px;
   font-size: 24px;
+  display: flex;
+  justify-content: center;
 }
 
 .forecast_today_item {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 </style>
