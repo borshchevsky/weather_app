@@ -2,8 +2,10 @@
   <div>
 
   </div>
-  <div class="forecast_today" v-for="day in forecastList" :key="day.date">
+  <div class="forecast_today_list">
+    <div v-for="day in forecastList" :key="day.date">
       <ForecastCell :forecast="day"/>
+    </div>
   </div>
 </template>
 
@@ -36,8 +38,7 @@ export default {
 </script>
 
 <style scoped>
-  .forecast_today {
-    display: inline-block;
-    margin: 12px;
+  .forecast_today_list {
+    display: flex;
   }
 </style>

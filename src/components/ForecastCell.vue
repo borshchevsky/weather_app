@@ -19,7 +19,6 @@
     <p>Sunrise: {{ forecast.astro.sunrise }}</p>
     <p>Sunset: {{ forecast.astro.sunset }}</p>
   </div>
-
 </template>
 
 <script>
@@ -53,6 +52,7 @@ p {
 
 .cell {
   padding: 10px;
+  margin: 10px;
   text-align: left;
   width: 200px;
   border-radius: 10px;

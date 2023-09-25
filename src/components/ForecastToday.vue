@@ -39,8 +39,6 @@ export default {
 
 .forecast_today {
   border-radius: 10px;
-  margin-left: 360px;
-  margin-right: 360px;
   padding: 10px;
   font-size: 24px;
 }

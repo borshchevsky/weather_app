@@ -71,7 +71,7 @@ input {
   padding: 10px;
   color: #555;
   border-radius: 7px;
-  font-size: large;
+  font-size: 16px;
 }
 
 button {
@@ -94,6 +94,8 @@ label {
 
 .center {
   text-align: center;
+  margin-left: 360px;
+  margin-right: 360px;
 }
 
 </style>
