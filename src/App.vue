@@ -28,7 +28,7 @@ export default {
   data() {
     return {
       forecast: null,
-      city: 'Moscow',
+      city: null,
     }
   },
   methods: {
